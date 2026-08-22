@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "kiosk.conf",
+  "description": "Validation schema for /etc/kiosk.conf key-value pairs",
+  "type": "object",
+  "required": ["KASM_HOST", "MODE"],
+  "properties": {
+    "KASM_HOST": { "type": "string", "pattern": "^[^/]+(:[0-9]{1,5})?$", "description": "host[:port], no scheme" },
+    "MODE": { "type": "string", "enum": ["persistent", "cast"] },
+    "CAST_KEY": { "type": "string" },
+    "KASM_USER_ID": { "type": "string", "description": "UUID; required when MODE=persistent" },
+    "KASM_API_KEY": { "type": "string", "description": "required when MODE=persistent; never committed" },
+    "KASM_API_SECRET": { "type": "string", "description": "required when MODE=persistent; never committed" },
+    "IGNORE_TLS": { "type": "string", "enum": ["0", "1"] }
+  },
+  "allOf": [
+    { "if": { "properties": { "MODE": { "const": "persistent" } } },
+      "then": { "required": ["KASM_USER_ID", "KASM_API_KEY", "KASM_API_SECRET"] } },
+    { "if": { "properties": { "MODE": { "const": "cast" } } },
+      "then": { "required": ["CAST_KEY"] } }
+  ]
+}

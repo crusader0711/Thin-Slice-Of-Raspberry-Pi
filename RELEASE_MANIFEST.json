@@ -1,0 +1,10 @@
+{
+  "name": "Thin-Slice-Of-Raspberry-Pi",
+  "version": "2.1.0",
+  "released": "2026-08-22T13:40:25Z",
+  "git_commit": "unknown",
+  "artifacts": [
+    {"path": "dist/thin-slice-2.1.0.tar.gz", "sha256": "3e51210fd7824e8b4f0fb7ee7dd607cde343bb2c1e6e296c2bdb56154afecdb0", "size_bytes": 3664}
+  ],
+  "provenance": {"built_by": "local", "builder_id": "vm"}
+}

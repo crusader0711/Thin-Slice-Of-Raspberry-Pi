@@ -1,0 +1,20 @@
+[Unit]
+Description=Kasm Kiosk (cage + chromium)
+Documentation=https://github.com/Crusader0711/Thin-Slice-Of-Raspberry-Pi
+After=network-online.target systemd-user-sessions.service seatd.service
+Wants=network-online.target
+
+[Service]
+User=kiosk
+PAMName=login
+TTYPath=/dev/tty1
+StandardInput=tty
+StandardError=journal
+# Block until the Kasm server answers; on timeout, Restart=always retries.
+ExecStartPre=/usr/local/bin/wait-for-kasm.sh
+ExecStart=/usr/bin/cage -d -- /usr/local/bin/kiosk-browser.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

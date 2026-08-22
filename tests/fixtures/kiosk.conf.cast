@@ -1,0 +1,7 @@
+KASM_HOST="server.test:9443"
+MODE="cast"
+CAST_KEY="testkey"
+KASM_USER_ID=""
+KASM_API_KEY=""
+KASM_API_SECRET=""
+IGNORE_TLS="1"

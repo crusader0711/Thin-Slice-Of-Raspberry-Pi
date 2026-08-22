@@ -1,0 +1,7 @@
+KASM_HOST="server.test:9443"
+MODE="persistent"
+CAST_KEY=""
+KASM_USER_ID="00000000-0000-0000-0000-000000000000"
+KASM_API_KEY="fixture-key"
+KASM_API_SECRET="fixture-secret"
+IGNORE_TLS="0"

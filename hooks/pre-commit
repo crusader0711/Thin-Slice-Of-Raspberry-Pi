@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Installed by `make setup` (git config core.hooksPath hooks/). Lint + secret floor.
+set -euo pipefail
+./scripts/lint.sh
+if command -v gitleaks >/dev/null; then
+  gitleaks protect --staged --no-banner
+else
+  # Fallback secret grep: credential assignments with literal values.
+  # Exempt: ${VAR} expansions, <PLACEHOLDERS>, and test fixtures.
+  if git diff --cached -U0 -- . ':(exclude)tests/fixtures' \
+    | grep -E '^\+.*(API_KEY|API_SECRET|PASSWORD|TOKEN)="[^$<"][^"]{7,}"'; then
+    echo "pre-commit: possible secret staged — use placeholders or .env"; exit 1
+  fi
+fi

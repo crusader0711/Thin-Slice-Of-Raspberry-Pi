@@ -1,0 +1,15 @@
+# Secrets & environment — never committed
+.env
+*.pem
+secrets/
+kiosk.conf
+!config/kiosk.conf.example
+
+# Build artifacts
+dist/
+.cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
