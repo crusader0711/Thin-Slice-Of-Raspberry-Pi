@@ -13,3 +13,8 @@ Solo-maintained OFS project; external PRs welcome but reviewed strictly.
   Accepted — supersede, don't edit.
 - **Versioning:** SemVer. Bump in `CHANGELOG.md` under `[Unreleased]` → cut
   with `make release`.
+
+## Ideas / backlog
+- Record ideas for consideration in `docs/BACKLOG.md` (IDs `BL.NN`, status `proposed`, priority `5` high to `1` low).
+- Optionally open an issue using `.github/ISSUE_TEMPLATE/idea.yml` (label `idea`); opening an issue does not assign a `BL.NN` ID.
+- Idea text must contain no personal details, credentials, or private household/health/school/finance/location information.

@@ -200,6 +200,8 @@ systemctl status kiosk
 
 Reference walkthroughs: [Server](docs/01-server-setup.md) · [Pi](docs/02-pi-setup.md) · [Family user guide](docs/03-user-guide.md) · [Troubleshooting](docs/runbooks/troubleshooting.md)
 
+Ideas for consideration live in [docs/BACKLOG.md](docs/BACKLOG.md) (intake template: [.github/ISSUE_TEMPLATE/idea.yml](.github/ISSUE_TEMPLATE/idea.yml)).
+
 ## Repository Layout
 
 Structured per the **OFS canonical repository template v1.0 — Tier T1** (tier
