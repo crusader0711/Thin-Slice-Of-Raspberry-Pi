@@ -38,3 +38,4 @@ design history.
    never hand-edited.
 6. Child-safety posture is architectural: filtering stays server-side; do not
    add client-side filtering or move policy onto the Pi.
+7. Backlog SoT is `docs/BACKLOG.md` (IDs `BL.NN`, never reused); idea text must pass the PII/hygiene rules.
